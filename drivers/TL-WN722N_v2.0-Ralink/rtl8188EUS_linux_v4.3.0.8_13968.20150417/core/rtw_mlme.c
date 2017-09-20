@@ -445,15 +445,18 @@ _func_exit_;
 
 void rtw_generate_random_ibss(u8* pibss)
 {
-	u32	curtime = rtw_get_current_time();
+	//u32	curtime = rtw_get_current_time();
 
 _func_enter_;
 	pibss[0] = 0x02;  //in ad-hoc mode bit1 must set to 1
 	pibss[1] = 0x11;
 	pibss[2] = 0x87;
-	pibss[3] = (u8)(curtime & 0xff) ;//p[0];
-	pibss[4] = (u8)((curtime>>8) & 0xff) ;//p[1];
-	pibss[5] = (u8)((curtime>>16) & 0xff) ;//p[2];
+	//pibss[3] = (u8)(curtime & 0xff) ;//p[0];
+	//pibss[4] = (u8)((curtime>>8) & 0xff) ;//p[1];
+	//pibss[5] = (u8)((curtime>>16) & 0xff) ;//p[2];
+	pibss[3] = 0x12;
+	pibss[4] = 0x34;
+	pibss[5] = 0x56;
 _func_exit_;
 	return;
 }
